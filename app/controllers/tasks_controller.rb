@@ -3,7 +3,7 @@ class TasksController < ApplicationController
    before_action :correct_user, only: [:show, :update ,:destroy]
 
   def index
-    @tasks = Task.all.page(params[:page]).per(3)
+    @tasks = user.tasks.page(params[:page]).per(3)
   end
   
   def show
